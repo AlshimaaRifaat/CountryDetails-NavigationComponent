@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.details.DetailsFragment">
+
+    <ImageView
+        android:id="@+id/flag_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/country_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="country"
+        android:textColor="#000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/flag_img"
+        app:layout_constraintStart_toStartOf="@id/flag_img"
+        app:layout_constraintTop_toBottomOf="@id/flag_img" />
+    <TextView
+        android:id="@+id/timezone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TimeZone"
+        android:textColor="#000"
+        app:layout_constraintEnd_toStartOf="@id/timeZone"
+        app:layout_constraintStart_toStartOf="@id/flag_img"
+        app:layout_constraintTop_toBottomOf="@id/country_text" />
+
+    <TextView
+        android:id="@+id/timeZone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="UTC"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@id/flag_img"
+        app:layout_constraintStart_toEndOf="@id/timezone_text"
+        app:layout_constraintTop_toBottomOf="@id/country_text" />
+  <!--  <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeZone"
+        app:tabBackground="#000"
+        app:tabIndicatorColor="#fff"
+        app:tabTextColor="#fff"/>-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeZone"
+        android:background="#00a294"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabTextColor="@android:color/background_light">
+
+    </com.google.android.material.tabs.TabLayout>
+
+  <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
